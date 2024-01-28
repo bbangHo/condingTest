@@ -3,7 +3,7 @@ package shortest_route;
 import java.util.*;
 import java.io.*;
 
-public class baekjoon1916_modified {
+public class Main {
     private static final int INF = Integer.MAX_VALUE / 16;
     static List<ArrayList<Node>> list;
     static int dist[];

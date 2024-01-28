@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BaekJoon_11404 {
+public class Main {
     public static int n;
     public static int[][] distance;
     public static final int INF = 1000000001;
