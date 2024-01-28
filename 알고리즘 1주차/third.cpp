@@ -1,10 +1,11 @@
+//프로그래머스 가장 먼노드
 #include <vector>
 #include <queue>
 #include <algorithm>
 
 using namespace std;
 vector<int>Graph[20001];
-int visit[20001] = { 0,1 };
+int visit[20001];
 queue<int> que;
 
 
