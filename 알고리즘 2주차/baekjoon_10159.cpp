@@ -1,4 +1,4 @@
-//백준 10159 저울
+//백준 10159 저울 워셜플로이드
 #include <iostream>
 
 using namespace std;

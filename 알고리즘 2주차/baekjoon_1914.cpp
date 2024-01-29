@@ -1,4 +1,4 @@
-//백준 1914 최소비용
+//백준 1914 최소비용 다익스트라
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -15,7 +15,7 @@ int main(void)
 {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-	cin.tie(NULL);
+	cout.tie(NULL);
 
 	int N, M;
 	cin >> N >> M;

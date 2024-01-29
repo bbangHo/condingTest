@@ -1,4 +1,4 @@
-//백준 11404 특정 도시찾기
+//백준 11404 특정 도시찾기 워셜플로이드
 #include <iostream>
 #include <algorithm>
 #define INF 100000000
