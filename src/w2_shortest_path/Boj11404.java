@@ -1,4 +1,4 @@
-package src.w2_shortest_path;
+package w2_shortest_path;
 
 import java.io.BufferedReader;
 import java.io.IOException;
