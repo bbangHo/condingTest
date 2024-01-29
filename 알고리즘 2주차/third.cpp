@@ -1,4 +1,4 @@
-//¹éÁØ 1914 ÃÖ¼Òºñ¿ë
+//ë°±ì¤€ 1914 ìµœì†Œë¹„ìš©.
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -8,7 +8,7 @@ using namespace std;
 
 vector<pair<int, int>> bus[1001];
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-//´ÙÀÍ½ºÆ®¶ó´Â ¹æ¹®ÇÏÁö ¾ÊÀº ³ëµå Áß °¡Àå ÀÛÀº ³ëµå¸¦ ¼±ÅÃÇØ¾ßÇÔ
+//ë‹¤ìµìŠ¤íŠ¸ë¼ëŠ” ë°©ë¬¸í•˜ì§€ ì•Šì€ ë…¸ë“œ ì¤‘ ê°€ì¥ ì‘ì€ ë…¸ë“œë¥¼ ì„ íƒí•´ì•¼í•¨
 int dp[1001];
 
 int main(void)
@@ -34,9 +34,9 @@ int main(void)
 	fill_n(dp, 1001, INF);
 
 
-	//´ÙÀÍ½ºÆ®¶ó ½ÃÀÛ
-	dp[first] = 0;//ÀÚ½ÅÀº °¡ÁßÄ¡ 0
-	pq.push({ 0,first });//{ºñ¿ë,µµ½Ã} greater<>°¡ Ã¹ ¿ø¼Ò¸¦ ±âÁ¡À¸·Î Á¤·ÄÇØ¼­
+	//ë‹¤ìµìŠ¤íŠ¸ë¼ ì‹œì‘
+	dp[first] = 0;//ìì‹ ì€ ê°€ì¤‘ì¹˜ 0
+	pq.push({ 0,first });//{ë¹„ìš©,ë„ì‹œ} greater<>ê°€ ì²« ì›ì†Œë¥¼ ê¸°ì ìœ¼ë¡œ ì •ë ¬í•´ì„œ
 
 	while (!pq.empty()) 
 	{
@@ -47,15 +47,15 @@ int main(void)
 		if (cost > dp[pos])
 			continue;
 		
-		for (int i = 0; i < bus[pos].size(); i++)//pos¿Í ¿¬°áµÈ µµ½Ãµé
+		for (int i = 0; i < bus[pos].size(); i++)//posì™€ ì—°ê²°ëœ ë„ì‹œë“¤
 		{
-			int npos = bus[pos][i].first;//´ÙÀ½ µµ½Ã
-			int ncost = cost + bus[pos][i].second;//ÇöÀç µµ½Ã±îÁöÀÇ ºñ¿ë + ´ÙÀ½¿¡ ¿¬°áµÈ µµ½Ã±îÁöÀÇ ºñ¿ë
+			int npos = bus[pos][i].first;//ë‹¤ìŒ ë„ì‹œ
+			int ncost = cost + bus[pos][i].second;//í˜„ì¬ ë„ì‹œê¹Œì§€ì˜ ë¹„ìš© + ë‹¤ìŒì— ì—°ê²°ëœ ë„ì‹œê¹Œì§€ì˜ ë¹„ìš©
 
-			if (ncost < dp[npos])//dp¿¡ ±â·ÏµÈ ºñ¿ëº¸´Ù ncost°¡ ½Î´Ù¸é
+			if (ncost < dp[npos])//dpì— ê¸°ë¡ëœ ë¹„ìš©ë³´ë‹¤ ncostê°€ ì‹¸ë‹¤ë©´
 			{
-				pq.push({ncost, npos}); //¿ì¼±¼øÀ§ Å¥¿¡ »ğÀÔ
-				dp[npos] = ncost;//dp¼öÁ¤
+				pq.push({ncost, npos}); //ìš°ì„ ìˆœìœ„ íì— ì‚½ì…
+				dp[npos] = ncost;//dpìˆ˜ì •
 			}
 		}
 	}
