@@ -1,4 +1,4 @@
-//¹éÁØ 18352 Æ¯Á¤°Å¸®ÀÇ µµ½ÃÃ£±â
+//ë°±ì¤€ 18352 íŠ¹ì •ê±°ë¦¬ì˜ ë„ì‹œì°¾ê¸° BFS or ë‹¤ìµìŠ¤íŠ¸ë¼
 #include <iostream>
 #include<queue>
 #include <vector>
@@ -28,7 +28,7 @@ int main(void)
 		graph[start].push_back(end);
 	}
 
-	//°¡ÁßÄ¡ ¸ðµÎ 1 => ´ÙÀÍ½ºÆ®¶ó ¸»°í BFSµµ °¡´É
+	//ê°€ì¤‘ì¹˜ ëª¨ë‘ 1 => ë‹¤ìµìŠ¤íŠ¸ë¼ ë§ê³  BFSë„ ê°€ëŠ¥
 	//BFS
 
 
