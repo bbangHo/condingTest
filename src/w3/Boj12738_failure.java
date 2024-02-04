@@ -1,7 +1,18 @@
-import java.util.*;
-import java.io.*;
+package w3;
 
-public class Main {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class Boj12738_failure {
+
+    /**
+     * 1% 에서 틀림
+     * 원인 모르겠음
+     */
 
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
