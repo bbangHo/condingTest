@@ -7,13 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Boj12738_failure {
-
-    /**
-     * 1% 에서 틀림
-     * 원인 모르겠음
-     */
-
+public class Boj12738_2352 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -31,27 +25,25 @@ public class Boj12738_failure {
 
         for (int i = 1; i <= n; i++) {
             int idx = binarySearchToGetIndex(lis, arr[i], 0, lis.size() - 1);
-            if (lis.get(idx) >= arr[i])     //
+            if (idx < lis.size() && lis.get(idx) >= arr[i])     // 삽입될 값이 마지막 값이 아니면서 가 최대인 값
                 lis.set(idx, arr[i]);
-            else if(lis.get(lis.size() - 1) < arr[i])
+            else if(lis.get(lis.size() - 1) < arr[i])       // 삽입 될 값이 마지막 값일 때는 뒤에 추가
                 lis.add(arr[i]);
         }
         System.out.println(lis.size() - 1);     // index = 0 일 때 뺴고
     }
 
+    // 이분 탐색을 잘못 구현해서 고생좀 했음
     public static int binarySearchToGetIndex(List<Integer> lis, int k, int left, int right) {
-        if(left > right) return -1;     // 값을 못 찾았음
+        if(left > right) return left;     // 값을 못 찾았음
 
         int mid = (left + right) / 2;
-        int idx = 0;
 
         if(lis.get(mid) == k)
             return mid;
         else if(lis.get(mid) < k)
-            idx = binarySearchToGetIndex(lis, k, mid + 1, right);
-        else if(lis.get(mid) > k)
-            idx = binarySearchToGetIndex(lis, k, left, mid - 1);
-
-        return idx == -1 ? mid : idx;   // 탐색 실패시 mid를 성공시 찾은 idx를 반환
+            return binarySearchToGetIndex(lis, k, mid + 1, right);
+        else
+            return binarySearchToGetIndex(lis, k, left, mid - 1);
     }
 }
