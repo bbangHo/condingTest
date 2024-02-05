@@ -8,7 +8,7 @@
   
 while(low <= high){
  
-    if(x >= target) //target이 일치하는 경우를 high로 좁힘 
+    if(arr[mid] >= target) //target이 일치하는 경우를 high로 좁힘 
   
     high = mid - 1;
     
@@ -24,7 +24,7 @@ while(low <= high){
 
   while(low <= high){
   
-      if(x > target)//target이 일치하는 경우를 low로 좁힘
+      if(arr[mid] > target)//target이 일치하는 경우를 low로 좁힘
   
       high = mid - 1;
   
