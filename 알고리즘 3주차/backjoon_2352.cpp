@@ -24,7 +24,7 @@ int main() {
         else
         {
             int left = 0;
-            int right = v.size()-1;//마지막 "인덱스"에 접근
+            int right = v.size() - 1;//마지막 "인덱스"에 접근
             while (left <= right)
             {
                 int mid = (left + right) / 2;
