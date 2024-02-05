@@ -8,7 +8,7 @@ int arr[40000];
 vector<int> v;
 
 int main() {
-  
+
     int n;
     cin >> n;
 
