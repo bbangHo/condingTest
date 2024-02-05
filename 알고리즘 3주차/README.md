@@ -9,11 +9,11 @@
   
  while(low <= high){
  
-  if(x >= target) //target이 일치하는 경우를 high로 좁힘 
+    if(x >= target) //target이 일치하는 경우를 high로 좁힘 
   
     high = mid - 1;
     
-  else if(x < target)
+    else if(x < target)
   
     low = mid + 1;
     
