@@ -6,7 +6,7 @@
 
 - 찾고자 하는 값을 기준으로 high를 좁히는 경우
   
-   while(low <= high){
+while(low <= high){
  
     if(x >= target) //target이 일치하는 경우를 high로 좁힘 
   
