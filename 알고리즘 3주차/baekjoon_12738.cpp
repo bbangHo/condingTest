@@ -33,7 +33,7 @@ int main() {
                 else
                     left = mid + 1;
             }
-            V[left] = arr[i];//while문은 left가 right자리로 오면서 종료되었음 
+            V[left] = arr[i];//while문은 left가 mid자리로 오면서 종료되었음 
         }
     }
 
