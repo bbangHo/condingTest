@@ -37,6 +37,7 @@ int main(void)
 			index = i;
 		}
 	}
+	cout << MAX << "\n";
 
 	answer.push_back(arr[index]);
 
