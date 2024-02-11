@@ -11,12 +11,12 @@ public class BaekJoon_14002 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int ans = 0;
+        int answer = 0;
         int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n+1];
         int[] DP = new int[n+1];
         int[] ansArr;
-        int cnt;
+        int count;
 
         st = new StringTokenizer(br.readLine());
         for(int i = 1; i <= n; i++) {
@@ -32,19 +32,19 @@ public class BaekJoon_14002 {
         }
 
         for(int i = 1; i <= n; i++) {
-            ans = Math.max(ans, DP[i]);
+            answer = Math.max(answer, DP[i]);
         }
 
-        cnt = ans;
-        ansArr = new int[ans];
+        count = answer;
+        ansArr = new int[answer];
         for(int i = n; i > 0; i--) {
-            if(DP[i] == cnt) {
-                --cnt;
-                ansArr[cnt] = arr[i];
+            if(DP[i] == count) {
+                --count;
+                ansArr[count] = arr[i];
             }
         }
 
-        System.out.println(ans);
+        System.out.println(answer);
         for(int i = 0; i < ansArr.length; i++) {
             System.out.println(ansArr[i] + " ");
         }

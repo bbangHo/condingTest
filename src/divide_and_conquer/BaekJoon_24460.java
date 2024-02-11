@@ -37,8 +37,8 @@ public class BaekJoon_24460 {
         int[] tmp = new int[4];
 
         for (int i = 0; i < 4; i++) {
-            int nx = x + (i % 2) * half; // 0, 1, 0, 1
-            int ny = y + (i / 2) * half; // 0, 0, 1, 1
+            int nx = x + (i % 2) * half;
+            int ny = y + (i / 2) * half;
 
             tmp[i] = selectSeat(half, nx, ny);
         }
