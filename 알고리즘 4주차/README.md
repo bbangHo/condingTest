@@ -1,5 +1,3 @@
-# condingTest
-코딩테스트 풀이 기록 및 피드백용
+# 4주차 LCS
 
-- 문제별 패키지(디렉토리) 만들어서 푸시
-- god 해승은 .cpp 파일 올리기 
+![캡처](https://github.com/bbangHo/condingTest/assets/112802506/1936c04e-584e-4a1f-ab67-3e36620241cb)
