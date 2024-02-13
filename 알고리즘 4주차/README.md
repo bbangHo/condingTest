@@ -13,3 +13,15 @@
 # 트리 순회
 https://kimjingo.tistory.com/114
 ![제목 없음](https://github.com/bbangHo/condingTest/assets/112802506/9c91a55e-a31d-4288-aaa2-41b92b8c3470)
+void tree(int start, int end, int pos)//pos는 preorder기준 현재 인덱스 위치
+{
+	for (int i = start; i < end; i++)//자식이 없는경우에는 for문이 바로 종료됨
+	{
+		if (preoder[pos] == inorder[i])//후위 탐색 (왼쪽-> 오른쪽-> print)
+		{
+			tree(start, i, pos+1);//루트 기준 왼쪽을 탐색
+			tree(i+1, end, pos+1 + i -start);
+			cout << preoder[pos] << ' ';
+		}
+	}
+}
