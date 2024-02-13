@@ -4,80 +4,69 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static class Node {
-        public int num;
-        public Node left;
-        public Node right;
-
-        public Node(int num) {
-            this.num = num;
-            left = null;
-            right = null;
-        }
-    }
-
-    static Queue<Integer> preorder;
-    static int[] inorder;
-    static int n;
+    static int rSize;
+    static int cSize;
+    static int ans;
+    static Set<Set<String>> set;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
+//        String[][] relation = {{"100", "ryan", "music", "2"}, {"200", "apeach", "math", "2"}, {"300", "tube", "computer", "3"}, {"400", "con", "computer", "4"}, {"500", "muzi", "music", "3"}, {"600", "apeach", "music", "2"}};
+        String[][] relation = {{"100","100","ryan","music","2"}, {"200","200","apeach","math","2"}, {"300","300","tube","computer","3"}, {"400","400","con","computer","4"}, {"500","500","muzi","music","3"}, {"600","600","apeach","music","2"}};
 
-        int iter = Integer.parseInt(br.readLine());
-        for(int k = 0; k < iter; k++) {
-            n = Integer.parseInt(br.readLine());
-            preorder = new LinkedList<>();
-            inorder = new int[n + 1];
+        rSize = relation.length;
+        cSize = relation[0].length;
+        set = new HashSet<>();
 
-            st = new StringTokenizer(br.readLine());
-            for (int i = 1; i <= n; i++) {
-                preorder.add(Integer.parseInt(st.nextToken()));
-            }
-
-            st = new StringTokenizer(br.readLine());
-            for (int i = 1; i <= n; i++) {
-                inorder[i] = Integer.parseInt(st.nextToken());
-            }
-
-            Node tree = buildTree(1, n);
-            postorder(tree);
-            System.out.println();
+        for (int i = 0; i < cSize; i++) {
+            boolean[] v = new boolean[cSize];
+            comb(0, i + 1, v, relation);
         }
+
+
+        System.out.println(ans);
     }
 
-    public static void postorder(Node tree) {
-
-        if(tree.left != null)
-            postorder(tree.left);
-        if(tree.right != null)
-            postorder(tree.right);
-        System.out.print(tree.num + " ");
-    }
-
-    public static Node buildTree (int start, int end) {
-        if(start > end)
-            return null;
-        else if(start >= end)
-            return new Node(preorder.poll());
-
-        int rootIndex = findIndex(preorder.poll());    // 루트 꺼내주기
-        Node node = new Node(inorder[rootIndex]);
-        node.left = buildTree(start, rootIndex - 1);
-        node.right = buildTree(rootIndex + 1, end);
-
-        return node;
-    }
-
-    public static int findIndex(int target) {
-        int tmp = 0;
-        for(int i = 1; i <= n; i++){
-            if(inorder[i] == target) {
-                tmp = i;
-                break;
-            }
+    public static void comb(int depth, int r, boolean[] visited, String[][] arr) {
+        if (r == 0 && candidateKeyIsPossible(arr, visited)) {
+            ans++;
+            return;
         }
-        return tmp;
+
+        if (depth == cSize) return;
+
+        visited[depth] = true;
+        comb(depth + 1, r - 1, visited, arr);
+
+        visited[depth] = false;
+        comb(depth + 1, r, visited, arr);
     }
 
+    public static boolean candidateKeyIsPossible(String[][] arr, boolean[] visited) {
+        Set<String> currentSet = new HashSet<>();
+
+        // 데이터 순회하면서
+        for (int i = 0; i < rSize; i++) {
+            String str = "";
+
+            // 체크해야할 속성만 체크
+            for (int k = 0; k < cSize; k++) {
+                if (visited[k]) {
+                    str += arr[i][k];
+                }
+            }
+
+            // 유일성 체크
+            if (currentSet.contains(str))
+                return false;
+            else
+                currentSet.add(str);
+        }
+
+        for(Set<String> s : set) {
+            if(s.containsAll(currentSet))
+                return false;
+        }
+
+        return true;
+    }
 }
