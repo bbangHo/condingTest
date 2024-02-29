@@ -6,7 +6,7 @@ using namespace std;
 
 
 int arr[1025][1025];
-int Lotto(int start_x, int start_y, int end_x, int end_y);//x°¡ 2Â÷¿ø ¹è¿­ÀÇ ¼¼·Î
+int Lotto(int start_x, int start_y, int end_x, int end_y);//xê°€ 2ì°¨ì› ë°°ì—´ì˜ ì„¸ë¡œ
 
 int main(void)
 {
@@ -28,7 +28,7 @@ int main(void)
 	return 0;
 }
 
-int Lotto(int start_x, int start_y, int end_x, int end_y)//x°¡ 2Â÷¿ø ¹è¿­ÀÇ ¼¼·Î
+int Lotto(int start_x, int start_y, int end_x, int end_y)//xê°€ 2ì°¨ì› ë°°ì—´ì˜ ì„¸ë¡œ
 {
 	if (start_y == end_y)
 		return arr[start_x][start_y];
@@ -37,11 +37,11 @@ int Lotto(int start_x, int start_y, int end_x, int end_y)//x°¡ 2Â÷¿ø ¹è¿­ÀÇ ¼¼·Î
 	int mid_y = (start_y + end_y) / 2;
 	vector<int> V
 	{
-		Lotto(start_x, start_y, mid_x, mid_y),//1±¸¿ª
-		Lotto(start_x, mid_y+1, mid_x, end_y),//2±¸¿ª
-		Lotto(mid_x+1, start_y, end_x, mid_y),//3±¸¿ª
-		Lotto(mid_x+1, mid_y+1, end_x, end_y)
-		//Lotto(start¼¼·Î, start°¡·Î, end¼¼·Î, end°¡·Î ÁÂÇ¥ ¼ø)
+		Lotto(start_x, start_y, mid_x, mid_y),//1êµ¬ì—­
+		Lotto(start_x, mid_y+1, mid_x, end_y),//2êµ¬ì—­
+		Lotto(mid_x+1, start_y, end_x, mid_y),//3êµ¬ì—­
+		Lotto(mid_x+1, mid_y+1, end_x, end_y)//4êµ¬ì—­
+		//Lotto(startì„¸ë¡œ, startê°€ë¡œ, endì„¸ë¡œ, endê°€ë¡œ ì¢Œí‘œ ìˆœ)
 	};
 	
 	sort(V.begin(), V.end());
