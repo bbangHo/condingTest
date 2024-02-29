@@ -1,4 +1,6 @@
-class Solution {
+package graph;
+
+public class Question2 {
     public int solution(int n, int[][] results) {
         boolean[][] adj = new boolean[n + 1][n + 1];
 
