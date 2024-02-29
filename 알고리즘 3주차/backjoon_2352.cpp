@@ -3,7 +3,7 @@
 #include <vector>
 
 using namespace std;
-
+ 
 int arr[40000];
 vector<int> v;
  
