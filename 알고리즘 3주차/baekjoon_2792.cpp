@@ -4,7 +4,7 @@
 using namespace std;
 
 int arr[300000];
-
+ 
 int main(void)
 {
 	int N, M;
@@ -22,7 +22,7 @@ int main(void)
 		high = max(high, arr[i]);
 
 	int mid = 0;
-	int Total = 0;//ÇĞ»ı ¼ö
+	int Total = 0;//í•™ìƒ ìˆ˜
 	int answer = 0;
 
 	while (low <= high)
@@ -37,10 +37,10 @@ int main(void)
 				Total += 1;
 		}
 
-		if (Total > N)//ÇöÀç ÇĞ»ı ¼ö¸¦ ³Ñ°Ü¹ö¸²
+		if (Total > N)//í˜„ì¬ í•™ìƒ ìˆ˜ë¥¼ ë„˜ê²¨ë²„ë¦¼
 			low = mid + 1;
 
-		else if (Total <= N)//º¸¼®À» ¾È¹Ş¾Æµµ µÇ´Â °æ¿ìµµ ÀÖÀ¸¹Ç·Î  {<=} µîÈ£ ÇÊ¿ä
+		else if (Total <= N)//ë³´ì„ì„ ì•ˆë°›ì•„ë„ ë˜ëŠ” ê²½ìš°ë„ ìˆìœ¼ë¯€ë¡œ  {<=} ë“±í˜¸ í•„ìš”
 		{
 			high = mid - 1;
 			answer = mid;
