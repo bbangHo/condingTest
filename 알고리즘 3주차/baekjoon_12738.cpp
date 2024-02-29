@@ -3,7 +3,7 @@
 #include<vector>
 
 using namespace std;
-
+ 
 vector<int> V;
 int arr[1000000];
 
@@ -33,7 +33,7 @@ int main() {
                 else
                     left = mid + 1;
             }
-            V[left] = arr[i];//while¹®Àº left°¡ midÀÚ¸®·Î ¿À¸é¼­ Á¾·áµÇ¾úÀ½ 
+            V[left] = arr[i];//whileë¬¸ì€ leftê°€ midìë¦¬ë¡œ ì˜¤ë©´ì„œ ì¢…ë£Œë˜ì—ˆìŒ 
         }
     }
 
