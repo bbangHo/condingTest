@@ -41,14 +41,14 @@ int main(void)
 	return 0;
 }
 
-void tree(int start, int end, int pos)//pos´Â preorder±âÁØ ÇöÀç ÀÎµ¦½º À§Ä¡
+void tree(int start, int end, int pos)//posëŠ” preorderê¸°ì¤€ í˜„ì¬ ì¸ë±ìŠ¤ ìœ„ì¹˜
 {
-	for (int i = start; i < end; i++)//ÀÚ½ÄÀÌ ¾ø´Â°æ¿ì¿¡´Â for¹®ÀÌ ¹Ù·Î Á¾·áµÊ
+	for (int i = start; i < end; i++)//ìì‹ì´ ì—†ëŠ”ê²½ìš°ì—ëŠ” forë¬¸ì´ ë°”ë¡œ ì¢…ë£Œë¨
 	{
-		if (preoder[pos] == inorder[i])//ÈÄÀ§ Å½»ö (¿ŞÂÊ-> ¿À¸¥ÂÊ-> print)
+		if (preoder[pos] == inorder[i])//í›„ìœ„ íƒìƒ‰ (ì™¼ìª½-> ì˜¤ë¥¸ìª½-> print)
 		{
-			tree(start, i, pos+1);//·çÆ® ±âÁØ ¿ŞÂÊÀ» Å½»ö
-			tree(i+1, end, pos+1 + i -start);
+			tree(start, i, pos+1);//ë£¨íŠ¸ ê¸°ì¤€ ì™¼ìª½ì„ íƒìƒ‰
+			tree(i+1, end, pos+1 + i -start);//ì™¼ìª½ íƒìƒ‰ ì¢…ë£Œ í›„ ì˜¤ë¥¸ìª½ íƒìƒ‰(ì™¼ìª½ êµ¬ì—­ì€ ê±´ë„ˆëœ€)
 			cout << preoder[pos] << ' ';
 		}
 	}
