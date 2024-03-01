@@ -2,7 +2,7 @@ package w_6;
 
 import java.util.*;
 
-class P_oil {
+class P250136 {
     static int n;
     static int m;
     static int minCol;
