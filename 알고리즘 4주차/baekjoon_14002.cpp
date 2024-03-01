@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector<pair<int, int>> dp(1001, { 0, 1 });//증가하는 수열의 인덱스번호, dp
+vector<pair<int, int>> dp(1001, { 0, 1 });//증가하는 수열의 (인덱스번호, dp)
 vector<int> answer;
 int arr[1001];
 

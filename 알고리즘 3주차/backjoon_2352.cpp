@@ -3,10 +3,10 @@
 #include <vector>
 
 using namespace std;
-
+ 
 int arr[40000];
 vector<int> v;
-
+ 
 int main() {
 
     int n;
@@ -19,12 +19,12 @@ int main() {
 
     for (int i = 0; i < n; i++)
     {
-        if (v.back() < arr[i])//v.back() ¸¶Áö¸· "¿ø¼Ò"¿¡ Á¢±Ù
+        if (v.back() < arr[i])//v.back() ë§ˆì§€ë§‰ "ì›ì†Œ"ì— ì ‘ê·¼
             v.push_back(arr[i]);
         else
         {
             int left = 0;
-            int right = v.size() - 1;//¸¶Áö¸· "ÀÎµ¦½º"¿¡ Á¢±Ù
+            int right = v.size() - 1;//ë§ˆì§€ë§‰ "ì¸ë±ìŠ¤"ì— ì ‘ê·¼
             while (left <= right)
             {
                 int mid = (left + right) / 2;
