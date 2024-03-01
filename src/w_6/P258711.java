@@ -1,8 +1,6 @@
 package w_6;
 
-import java.util.*;
-
-class P2588711 {
+class P258711 {
     static boolean[] visited;
     static int[] in;
     static int[] out;
