@@ -8,22 +8,22 @@ long long solution(int n, vector<int> times)
     sort(times.begin(), times.end());
 
     long long min = 1;
-    long long max = (long long)times.back() * (long long)n;//Çü º¯È¯ ÁÖÀÇ
+    long long max = (long long)times.back() * (long long)n;//í˜• ë³€í™˜ ì£¼ì˜
 
     while (min <= max)
     {
-        long long totalTime = 0;
+        long long Passenger = 0;
         long long mid = (min + max) / 2;
 
         for (long long c : times)
-            totalTime += mid / c;
+            Passenger += mid / c;
 
-        if (totalTime >= n)//½Ã°£À» ³Ê¹« ¿©À¯·Ó°Ô ÀâÀ½
+        if (Passenger >= n)//ì‹œê°„ì„ ë„ˆë¬´ ì—¬ìœ ë¡­ê²Œ ì¡ìŒ
         {
             answer = mid;
             max = mid - 1;
         }
-        else//½Ã°£À» ³Ê¹« ºıºıÇÏ°Ô ÀâÀ½ 
+        else//ì‹œê°„ì„ ë„ˆë¬´ ë¹¡ë¹¡í•˜ê²Œ ì¡ìŒ 
         {
             min = mid + 1;
         }
