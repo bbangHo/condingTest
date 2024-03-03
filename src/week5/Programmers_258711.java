@@ -1,17 +1,7 @@
 package week5;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Programmers_258711 {
     static int N = 1000000;
-
-    public static void main(String[] args) {
-        int[][] edges;
-
-        edges = new int[100][100];
-        solution(edges);
-    }
 
     public static int[] solution(int[][] edges) {
         int[] ingoing = new int[N];
