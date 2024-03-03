@@ -12,6 +12,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/258711
 # 프로그래머스 : 입국심사 <이분탐색, 형변환>
 - long long ex = (long long)int변수 * (long long)int변수; 로 써야함
 - int x int 는 최대 int임 애초에 long long으로 변환을 못함. long long으로 둘 다 바꿔줘야 long long 범위에 들어가는 값이 나옴
+
   //////////////
   처음에 middle 값을 대충 정함
   middle 시간안에 처리할 수 있는 총 사람수를 구함(totalTime += mid/c);
