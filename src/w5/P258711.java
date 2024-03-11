@@ -1,4 +1,4 @@
-package w_6;
+package w5;
 
 class P258711 {
     static boolean[] visited;

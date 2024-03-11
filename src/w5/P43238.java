@@ -1,4 +1,4 @@
-package w_6;
+package w5;
 
 import java.util.*;
 
