@@ -1,4 +1,4 @@
-package week7;
+package week6;
 
 public class Programmers_258712 {
     public int solution(String[] friends, String[] gifts) {
