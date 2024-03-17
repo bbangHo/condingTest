@@ -1,4 +1,4 @@
-package week7;
+package week6;
 //설명이 필요한 문제
 import java.util.Arrays;
 
