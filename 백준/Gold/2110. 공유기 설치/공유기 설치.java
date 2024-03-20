@@ -21,7 +21,8 @@ public class Main {
         Arrays.sort(arr);
 
         int left = 0;
-        int right = arr[0] + arr[n - 1] + 1;
+//        int right = arr[0] + arr[n - 1] + 1;
+        int right = 1_000_000_001;
 
         while (left < right) {
             int mid = (left + right) / 2;
@@ -33,7 +34,7 @@ public class Main {
             }
         }
 
-        System.out.println(left - 1);
+        System.out.println(right - 1);
 
     }
 
