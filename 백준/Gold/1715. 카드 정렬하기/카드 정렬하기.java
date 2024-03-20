@@ -15,22 +15,12 @@ public class Main {
         }
 
         int sum = 0;
-        if (q.size() == 1) {
-            System.out.println(0);
-        } else {
-            while (!q.isEmpty()) {
-                int tmp = 0;
-                tmp += q.poll();
-                tmp += q.poll();
-
-                sum += tmp;
-                if (q.isEmpty()) break;
-                else {
-                    q.add(tmp);
-                }
-            }
-
-            System.out.println(sum);
+        while (q.size() > 1) {
+            int tmp = q.poll() + q.poll();
+            sum += tmp;
+            q.add(tmp);
         }
+
+        System.out.println(sum);
     }
 }
