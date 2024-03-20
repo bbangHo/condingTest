@@ -5,6 +5,7 @@ public class Main {
     static int n;
     static int c;
     static int[] arr;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -20,21 +21,19 @@ public class Main {
         Arrays.sort(arr);
 
         int left = 0;
-        int right = 1_000_000_000;
-        int ans = 0;
+        int right = arr[0] + arr[n - 1] + 1;
 
-        while(left <= right) {
+        while (left < right) {
             int mid = (left + right) / 2;
 
-            if(check(mid) >= c) {
-                ans = mid;
+            if (check(mid) >= c) {
                 left = mid + 1;
             } else {
-                right = mid - 1;
+                right = mid;
             }
         }
 
-        System.out.println(ans);
+        System.out.println(left - 1);
 
     }
 
@@ -43,7 +42,7 @@ public class Main {
         int count = 1;
 
         for (int j = 1; j < n; j++) {
-            if(arr[j] - arr[i] >= mid) {
+            if (arr[j] - arr[i] >= mid) {
                 count++;
                 i = j;
             }
