@@ -6,12 +6,22 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class BaekJoon_15686 {
+    public static class Node {
+        int x;
+        int y;
+
+        public Node(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
     static int n, m;
     static int[][] map;
     static int min = Integer.MAX_VALUE;
     static ArrayList<Node> chickenList = new ArrayList<>(); //치킨집 위치를 저장하는 리스트
     static ArrayList<Node> houseList = new ArrayList<>(); // 집의 위치를 저장하는 리스트
-    static boolean[] chickenVisited; // 뽑은 치킨집 체크
+    static boolean[] visited; // 뽑은 치킨집 체크
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,12 +36,14 @@ public class BaekJoon_15686 {
             st = new StringTokenizer(br.readLine());
             for(int j=0; j<n; j++){
                 map[i][j] = Integer.parseInt(st.nextToken());
-                if(map[i][j] == 1) houseList.add(new Node(i, j));
-                else if(map[i][j] == 2) chickenList.add(new Node(i, j));
+                if(map[i][j] == 1)
+                    houseList.add(new Node(i, j));
+                else if(map[i][j] == 2)
+                    chickenList.add(new Node(i, j));
             }
         }
 
-        chickenVisited = new boolean[chickenList.size()];
+        visited = new boolean[chickenList.size()];
         backtracking(0, 0); //m개의 치킨집을 뽑는다.
         System.out.println(min);
     }
@@ -42,7 +54,7 @@ public class BaekJoon_15686 {
             for(int i = 0; i < houseList.size(); i++) {
                 int sum = Integer.MAX_VALUE;
                 for(int j = 0; j < chickenList.size(); j++) {
-                    if(chickenVisited[j] == true) { //i번째 집에서부터 j번짜 치킨집 까지의 거리 중 최소값을 구한다.
+                    if(visited[j]) { //i번째 집에서부터 j번째 치킨집 까지의 거리 중 최소값을 구한다.
                         int dist = Math.abs(houseList.get(i).x - chickenList.get(j).x)
                                 + Math.abs(houseList.get(i).y - chickenList.get(j).y);
                         sum = Math.min(sum, dist);
@@ -55,21 +67,11 @@ public class BaekJoon_15686 {
         }
 
         for(int i = idx; i < chickenList.size(); i++) {
-            if(chickenVisited[i] == false) {
-                chickenVisited[i] = true;
+            if(!visited[i]) {
+                visited[i] = true;
                 backtracking(count + 1, i + 1);
-                chickenVisited[i] = false;
+                visited[i] = false;
             }
-        }
-    }
-
-    public static class Node {
-        int x;
-        int y;
-
-        public Node(int x, int y) {
-            this.x = x;
-            this.y = y;
         }
     }
 }
