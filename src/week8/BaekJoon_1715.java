@@ -19,14 +19,15 @@ public class BaekJoon_1715 {
 
         Arrays.sort(card);
 
-        int sum = 0, tot = 0;
+        int tot = 0;
         total = new int[n - 1];
         if(n == 1)
             tot = card[0];
         else {
-            sum = card[0] + card[1];
+            int sum = card[0] + card[1];
+            total[0] = sum;
             for (int i = 2; i < n; i++) {
-                total[i - 2] = sum;
+                total[i - 1] = sum;
                 sum += card[i];
             }
 
