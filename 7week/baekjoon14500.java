@@ -10,7 +10,7 @@ public class Main {
     static int []dx = {-1,1,0,0};
     static int[] dy = {0,0,-1,1};
     public static void main(String[] args)throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));  
         StringTokenizer st = new StringTokenizer(bf.readLine());
         N = Integer.parseInt(st.nextToken());
         M =  Integer.parseInt(st.nextToken());
